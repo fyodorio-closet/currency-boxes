@@ -1,5 +1,5 @@
 <template>
-    <section class="currency-list" v-bind:class="{'no-zero-height': isListFeatured}">
+    <section class="currency-list" :class="{'no-zero-height': isListFeatured}">
         <CurrencyListItem
             v-for="box in currencyList"
             :key="box.id"

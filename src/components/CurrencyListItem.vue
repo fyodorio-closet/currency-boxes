@@ -1,7 +1,7 @@
 <template>
     <div
         class="currency-list-item"
-        v-bind:class="{
+        :class="{
             'currency-list-item_featured': isItemOfFeaturedList,
             'currency-list-item_basic': !isItemOfFeaturedList,
             'currency-list-item_basic--inactive': !isItemOfFeaturedList && !currencyListItem.isSelected

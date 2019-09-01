@@ -14,7 +14,7 @@
             {{ currencyListItem.name | uppercase }}
             <input
                 type="checkbox"
-                v-bind:checked="currencyListItem.isSelected"
+                :checked="currencyListItem.isSelected"
                 @change="toggleSelection"
             >
             <span class="currency-list-item-checkmark"></span>
