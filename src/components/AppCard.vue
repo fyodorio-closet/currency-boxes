@@ -1,38 +1,23 @@
 <template>
-  <div>
+  <div class="app-card">
     <h1>Selected</h1>
-    <ul>
-      <li v-for="box in selectedBoxes" :key="box.id" @click="toggleSelection(box)">
-        {{ box.name }}
-      </li>
-    </ul>
+    <CurrencyList :currencyList="selectedBoxes" :isFeatured="true"/>
     <h1>All</h1>
-    <ul>
-      <li v-for="box in unselectedBoxes" :key="box.id" @click="toggleSelection(box)">
-        {{ box.name }}
-      </li>
-    </ul>
+    <CurrencyList :currencyList="unselectedBoxes" />
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
+import CurrencyList from "./CurrencyList";
 
 export default {
-  name: "AppCard",
+  components: { CurrencyList },
   computed: {
     ...mapGetters([
       'selectedBoxes',
       'unselectedBoxes'
     ])
-  },
-  methods: {
-    ...mapActions([
-      'updateBox'
-    ]),
-    toggleSelection(box) {
-      this.updateBox({ ...box, isSelected: !box.isSelected })
-    }
   }
 };
 </script>
