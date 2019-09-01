@@ -23,7 +23,7 @@ export default {
 <style scoped>
   .app-card {
     width: 50%;
-    min-width: 380px;
+    min-width: 340px;
     border: 1px solid grey;
     border-radius: 5px;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
