@@ -16,6 +16,8 @@ describe('CurrencyListItem', () => {
 			}
 		})
 
-		expect(wrapper.find('.currency-list-item_featured').exists()).toBeTruthy()
+		expect(
+			wrapper.find('.currency-list-item_featured').exists()
+		).toBeTruthy()
 	})
 })

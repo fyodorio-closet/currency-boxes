@@ -15,7 +15,9 @@ describe('CurrencyListItemLabel', () => {
 			}
 		})
 
-		expect(wrapper.find('.currency-list-item-label_display').text()).toBe('rub')
+		expect(wrapper.find('.currency-list-item-label_display').text()).toBe(
+			'rub'
+		)
 	})
 
 	it('renders checkbox for common list items', () => {
@@ -31,6 +33,8 @@ describe('CurrencyListItemLabel', () => {
 			}
 		})
 
-		expect(wrapper.find('.currency-list-item-checkmark').exists()).toBeTruthy()
+		expect(
+			wrapper.find('.currency-list-item-checkmark').exists()
+		).toBeTruthy()
 	})
 })
