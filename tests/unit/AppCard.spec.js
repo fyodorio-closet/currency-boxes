@@ -1,8 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
 import AppCard from '@/components/AppCard.vue'
 
-xdescribe('AppCard', () => {
-	it('has computed property of allBoxes (a list)', () => {})
+describe('AppCard', () => {
+	it('has computed property of allBoxes (a list)', () => {
+		expect(AppCard.computed.allBoxes).toBeDefined()
+	})
 
-	it('has computed property of selectedBoxes (a list)', () => {})
+	it('has computed property of selectedBoxes (a list)', () => {
+		expect(AppCard.computed.selectedBoxes).toBeDefined()
+	})
 })

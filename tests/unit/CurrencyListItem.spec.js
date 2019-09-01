@@ -1,13 +1,21 @@
-import { mount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'vuex'
+import { shallowMount } from '@vue/test-utils'
 import CurrencyListItem from '@/components/CurrencyListItem.vue'
 
-const localVue = createLocalVue()
+describe('CurrencyListItem', () => {
+	it('changes item class depending on input props', () => {
+		const wrapper = shallowMount(CurrencyListItem, {
+			propsData: {
+				currencyList: [
+					{
+						id: 'rub',
+						name: 'RUB',
+						isSelected: true
+					}
+				],
+				isItemOfFeaturedList: true
+			}
+		})
 
-localVue.use(Vuex)
-
-xdescribe('CurrencyListItem', () => {
-	it('changes item class depending on input props', () => {})
-
-	it('emits updateBox action when toggleSelection method is called', () => {})
+		expect(wrapper.find('.currency-list-item_featured').exists()).toBeTruthy()
+	})
 })
