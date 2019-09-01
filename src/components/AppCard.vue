@@ -1,7 +1,7 @@
 <template>
   <div class="app-card">
-    <CurrencyList :currencyList="selectedBoxes" />
-    <CurrencyList :currencyList="unselectedBoxes" />
+    <CurrencyList :currencyList="selectedBoxes" :isListFeatured="true" />
+    <CurrencyList :currencyList="allBoxes" />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   computed: {
     ...mapGetters([
       'selectedBoxes',
-      'unselectedBoxes'
+      'allBoxes'
     ])
   }
 };

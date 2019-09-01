@@ -1,24 +1,33 @@
 <template>
     <div
-            class="currency-list-item"
-            v-bind:class="{
-                'currency-list-item_featured': currencyListItem.isSelected,
-                'currency-list-item_basic': !currencyListItem.isSelected
-            }"
+        class="currency-list-item"
+        v-bind:class="{
+            'currency-list-item_featured': isItemOfFeaturedList,
+            'currency-list-item_basic': !isItemOfFeaturedList
+        }"
     >
-        <div @click="toggleSelection()">{{ currencyListItem.name | casify(currencyListItem.isSelected) }}</div>
-        <CurrencyListItemBadge v-if="currencyListItem.isSelected"/>
+        <CurrencyListItemLabel
+            :currencyListItem="currencyListItem"
+            :toggleSelection="toggleSelection"
+            :isInteractive="!isItemOfFeaturedList"
+        />
+        <CurrencyListItemBadge
+            v-if="isItemOfFeaturedList"
+            :toggleSelection="toggleSelection"
+        />
     </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import CurrencyListItemBadge from "./CurrencyListItemBadge";
+import CurrencyListItemLabel from "./CurrencyListItemLabel";
 
 export default {
-    components: { CurrencyListItemBadge },
+    components: { CurrencyListItemLabel, CurrencyListItemBadge },
     props: {
-        currencyListItem: Object
+        currencyListItem: Object,
+        isItemOfFeaturedList: Boolean
     },
     methods: {
         ...mapActions([
@@ -26,14 +35,6 @@ export default {
         ]),
         toggleSelection() {
             this.updateBox({ ...this.currencyListItem, isSelected: !this.currencyListItem.isSelected })
-        }
-    },
-    filters: {
-        casify: function(value, isSelected) {
-            if (!value) {
-                return '';
-            }
-            return isSelected ? value.toString().toLowerCase() : value.toString().toUpperCase();
         }
     }
 }

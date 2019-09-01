@@ -2,9 +2,10 @@
     <div>
         <section class="currency-list">
             <CurrencyListItem
-                    v-for="box in currencyList"
-                    :key="box.id"
-                    :currencyListItem="box"
+                v-for="box in currencyList"
+                :key="box.id"
+                :currencyListItem="box"
+                :isItemOfFeaturedList="isListFeatured"
             />
         </section>
     </div>
@@ -16,7 +17,11 @@ import CurrencyListItem from "./CurrencyListItem";
 export default {
     components: { CurrencyListItem },
     props: {
-        currencyList: Array
+        currencyList: Array,
+        isListFeatured: {
+            type: Boolean,
+            default: false
+        }
     }
 }
 </script>
