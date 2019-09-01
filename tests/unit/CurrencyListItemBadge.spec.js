@@ -1,6 +1,6 @@
-import { mount } from "@vue/test-utils";
-import CurrencyListItemBadge from "@/components/CurrencyListItemBadge.vue";
+import { mount } from '@vue/test-utils'
+import CurrencyListItemBadge from '@/components/CurrencyListItemBadge.vue'
 
 xdescribe('CurrencyListItemBadge', () => {
-    it('calls removing method when clicked', () => {});
-});
+	it('calls removing method when clicked', () => {})
+})
