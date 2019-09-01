@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <section class="currency-list">
-            <CurrencyListItem
-                v-for="box in currencyList"
-                :key="box.id"
-                :currencyListItem="box"
-                :isItemOfFeaturedList="isListFeatured"
-            />
-        </section>
-    </div>
+    <section class="currency-list" v-bind:class="{'no-zero-height': isListFeatured}">
+        <CurrencyListItem
+            v-for="box in currencyList"
+            :key="box.id"
+            :currencyListItem="box"
+            :isItemOfFeaturedList="isListFeatured"
+        />
+    </section>
 </template>
 
 <script>
@@ -31,9 +29,12 @@ export default {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         padding: 8px;
         box-sizing: border-box;
+    }
+    .no-zero-height {
+        min-height: 48px;
     }
 </style>

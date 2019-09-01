@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
     .currency-list-item {
-        width: 30%;
+        width: 31.333%;
         margin: 1%;
         padding: 1%;
         display: flex;
