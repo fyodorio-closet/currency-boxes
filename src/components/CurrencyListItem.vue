@@ -13,7 +13,7 @@
         />
         <CurrencyListItemBadge
             v-if="isItemOfFeaturedList"
-            :toggleSelection="toggleSelection"
+            :removeItem="toggleSelection"
         />
     </div>
 </template>

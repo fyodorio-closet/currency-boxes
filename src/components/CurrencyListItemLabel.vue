@@ -2,7 +2,6 @@
     <div class="currency-list-item-label">
         <div
             class="currency-list-item-label_display"
-            @click="toggleSelection"
             v-if="!isInteractive"
         >
             {{ currencyListItem.name | lowercase }}

@@ -1,10 +1,12 @@
 <template>
-    <div class="currency-list-item-badge">X</div>
+    <div class="currency-list-item-badge" @click="removeItem">X</div>
 </template>
 
 <script>
     export default {
-        name: "CurrencyListItemBadge"
+        props: {
+            removeItem: Function
+        }
     }
 </script>
 
