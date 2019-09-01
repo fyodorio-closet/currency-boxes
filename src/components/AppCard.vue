@@ -1,8 +1,6 @@
 <template>
   <div class="app-card">
-    <h1>Selected</h1>
-    <CurrencyList :currencyList="selectedBoxes" :isFeatured="true"/>
-    <h1>All</h1>
+    <CurrencyList :currencyList="selectedBoxes" />
     <CurrencyList :currencyList="unselectedBoxes" />
   </div>
 </template>
@@ -22,4 +20,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .app-card {
+    width: 50%;
+    min-width: 380px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  }
+</style>
