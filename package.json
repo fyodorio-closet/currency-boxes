@@ -1,11 +1,15 @@
 {
   "name": "currency-boxes",
+  "author":  "Fyodor Loenko",
+  "description": "Vue / Vuex application for juggling currency ID cards",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "vue-cli-service lint --no-fix",
+    "lint-autofix": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test-watch:unit": "vue-cli-service test:unit --watch --verbose"
   },
